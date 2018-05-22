@@ -7,12 +7,17 @@
 //
 
 import UIKit
+import JCApiClient
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        let event = Event(title: "hello world")
+        
+        print(event.title)
     }
 
     override func didReceiveMemoryWarning() {
