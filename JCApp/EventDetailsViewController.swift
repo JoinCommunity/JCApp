@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import JCApiClient
 
 class EventDetailsViewController: UIViewController {
 
+    var item: Event!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
