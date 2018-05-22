@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3918444A20B4422A0009256D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3918444920B4422A0009256D /* AppDelegate.swift */; };
-		3918444C20B4422A0009256D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3918444B20B4422A0009256D /* ViewController.swift */; };
 		3918444F20B4422A0009256D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3918444D20B4422A0009256D /* Main.storyboard */; };
 		3918445220B4422A0009256D /* JCApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3918445020B4422A0009256D /* JCApp.xcdatamodeld */; };
 		3918445420B4422C0009256D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3918445320B4422C0009256D /* Assets.xcassets */; };
@@ -17,6 +16,7 @@
 		3918446D20B4422C0009256D /* JCAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3918446C20B4422C0009256D /* JCAppUITests.swift */; };
 		3918449220B4469A0009256D /* JCApiClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3918449120B4469A0009256D /* JCApiClient.framework */; };
 		3918449420B4469F0009256D /* JCApiClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3918449120B4469A0009256D /* JCApiClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3986277F20B44BFD00063201 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3986277E20B44BFD00063201 /* EventsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +53,6 @@
 /* Begin PBXFileReference section */
 		3918444620B4422A0009256D /* JCApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JCApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3918444920B4422A0009256D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		3918444B20B4422A0009256D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		3918444E20B4422A0009256D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3918445120B4422A0009256D /* JCApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JCApp.xcdatamodel; sourceTree = "<group>"; };
 		3918445320B4422C0009256D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -66,6 +65,7 @@
 		3918446C20B4422C0009256D /* JCAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JCAppUITests.swift; sourceTree = "<group>"; };
 		3918446E20B4422C0009256D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3918449120B4469A0009256D /* JCApiClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = JCApiClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3986277E20B44BFD00063201 /* EventsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,7 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				3918444D20B4422A0009256D /* Main.storyboard */,
-				3918444B20B4422A0009256D /* ViewController.swift */,
+				3986277E20B44BFD00063201 /* EventsTableViewController.swift */,
 				3918448720B443300009256D /* Supporting Files */,
 			);
 			path = JCApp;
@@ -295,8 +295,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3918444C20B4422A0009256D /* ViewController.swift in Sources */,
 				3918445220B4422A0009256D /* JCApp.xcdatamodeld in Sources */,
+				3986277F20B44BFD00063201 /* EventsTableViewController.swift in Sources */,
 				3918444A20B4422A0009256D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -473,6 +473,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6CEJZ72DDU;
 				INFOPLIST_FILE = "JCApp/Supporting Files/Info.plist";
+				JOINCOMMUNITY_URL_API = "https://jcapi.pedrogyn.com.br/";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -491,6 +492,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6CEJZ72DDU;
 				INFOPLIST_FILE = "JCApp/Supporting Files/Info.plist";
+				JOINCOMMUNITY_URL_API = "https://jcapi.pedrogyn.com.br/";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
