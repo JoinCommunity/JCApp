@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		3918444A20B4422A0009256D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3918444920B4422A0009256D /* AppDelegate.swift */; };
 		3918444F20B4422A0009256D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3918444D20B4422A0009256D /* Main.storyboard */; };
-		3918445220B4422A0009256D /* JCApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3918445020B4422A0009256D /* JCApp.xcdatamodeld */; };
 		3918445420B4422C0009256D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3918445320B4422C0009256D /* Assets.xcassets */; };
 		3918445720B4422C0009256D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3918445520B4422C0009256D /* LaunchScreen.storyboard */; };
 		3918446220B4422C0009256D /* JCAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3918446120B4422C0009256D /* JCAppTests.swift */; };
@@ -58,7 +57,6 @@
 		3918444620B4422A0009256D /* JCApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JCApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3918444920B4422A0009256D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3918444E20B4422A0009256D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		3918445120B4422A0009256D /* JCApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JCApp.xcdatamodel; sourceTree = "<group>"; };
 		3918445320B4422C0009256D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3918445620B4422C0009256D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3918445820B4422C0009256D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -169,7 +167,6 @@
 				3918445320B4422C0009256D /* Assets.xcassets */,
 				3918445520B4422C0009256D /* LaunchScreen.storyboard */,
 				3918445820B4422C0009256D /* Info.plist */,
-				3918445020B4422A0009256D /* JCApp.xcdatamodeld */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -324,7 +321,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3918445220B4422A0009256D /* JCApp.xcdatamodeld in Sources */,
 				3986278720B45A2300063201 /* EventCustomCellTableViewCell.swift in Sources */,
 				3986278420B4528200063201 /* EventDetailsViewController.swift in Sources */,
 				3986277F20B44BFD00063201 /* EventsTableViewController.swift in Sources */,
@@ -658,19 +654,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		3918445020B4422A0009256D /* JCApp.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				3918445120B4422A0009256D /* JCApp.xcdatamodel */,
-			);
-			currentVersion = 3918445120B4422A0009256D /* JCApp.xcdatamodel */;
-			path = JCApp.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 3918443E20B4422A0009256D /* Project object */;
 }

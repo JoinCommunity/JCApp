@@ -10,7 +10,7 @@ import UIKit
 import JCApiClient
 
 class EventsTableViewController: UITableViewController, UIViewControllerPreviewingDelegate {
-
+    
     var localArray: [Event] = []
     
     override func viewDidLoad() {
@@ -30,23 +30,23 @@ class EventsTableViewController: UITableViewController, UIViewControllerPreviewi
         self.registerForPreviewing(with: self, sourceView: self.tableView)
         
         // Get remote data
-        self.updateData()
+        self.updateLocalData()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.localArray.count
     }
-
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         
@@ -69,12 +69,12 @@ class EventsTableViewController: UITableViewController, UIViewControllerPreviewi
     
     // MARK: IBActions
     @IBAction func updateAction(_ sender: Any) {
-        self.updateData()
+        self.updateRemoteData()
         self.tableView.refreshControl?.endRefreshing()
     }
     
     // MARK: Local Methods
-    private func updateData() {
+    private func updateRemoteData() {
         Event.getAllEvents(completeCall: { (returnData) in
             if let returnData = returnData {
                 self.localArray = returnData
@@ -83,6 +83,20 @@ class EventsTableViewController: UITableViewController, UIViewControllerPreviewi
         }) { (errorMessage) in
             print(errorMessage)
             // TODO: Handle error message with user
+        }
+    }
+    
+    private func updateLocalData() {
+        if let localCache = Event.getAllLocalEvents() {
+            if localCache.count > 0 {
+                self.localArray = localCache
+                self.tableView.reloadData()
+            }
+            else {
+                self.updateRemoteData()
+            }
+        } else {
+            self.updateRemoteData()
         }
     }
     
