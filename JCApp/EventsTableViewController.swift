@@ -20,7 +20,11 @@ class EventsTableViewController: UITableViewController, UIViewControllerPreviewi
         //self.navigationController?.navigationBar.prefersLargeTitles = true
         
         // Color
-        self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        if #available(iOS 11.0, *) {
+            self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        } else {
+            // Fallback on earlier versions
+        }
         self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.tintColor = .white
         self.navigationController?.navigationBar.barTintColor = .backGroundColor
@@ -28,6 +32,16 @@ class EventsTableViewController: UITableViewController, UIViewControllerPreviewi
         
         // Peek and Pop Register
         self.registerForPreviewing(with: self, sourceView: self.tableView)
+        
+        // Register Cell
+        self.tableView.register(UINib(nibName: "EventCustomCellTableViewCell", bundle: nil), forCellReuseIdentifier: "Cell")
+        
+        // Now rows separator
+        //self.tableView.separatorStyle = .none
+        
+        // Dynamic height row
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 130.0
         
         // Get remote data
         self.updateLocalData()
@@ -48,10 +62,13 @@ class EventsTableViewController: UITableViewController, UIViewControllerPreviewi
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! EventCustomCellTableViewCell
         
         let item = self.localArray[indexPath.row]
-        cell.textLabel?.text = item.name
+        cell.nameLabel.text = item.name
+        cell.roomLabel.text = item.room
+        cell.speakerLabel.text = item.speaker
+        //cell.timeLabel.text = item.time
         
         return cell
     }
