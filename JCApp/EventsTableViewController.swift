@@ -9,18 +9,22 @@
 import UIKit
 import JCApiClient
 
-class EventsTableViewController: UITableViewController, UIViewControllerPreviewingDelegate {
+class EventsTableViewController: UITableViewController, UISearchBarDelegate, UIViewControllerPreviewingDelegate {
+    
+    @IBOutlet weak var localSearchBar: UISearchBar!
     
     var localArray: [Event] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Large titles
-        //self.navigationController?.navigationBar.prefersLargeTitles = true
+        // Config SearchBar
+        self.localSearchBar.delegate = self
         
         // Color
         if #available(iOS 11.0, *) {
+            // Large titles
+            //self.navigationController?.navigationBar.prefersLargeTitles = true
             self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         } else {
             // Fallback on earlier versions
@@ -37,7 +41,7 @@ class EventsTableViewController: UITableViewController, UIViewControllerPreviewi
         self.tableView.register(UINib(nibName: "EventCustomCellTableViewCell", bundle: nil), forCellReuseIdentifier: "Cell")
         
         // Now rows separator
-        //self.tableView.separatorStyle = .none
+        self.tableView.separatorStyle = .none
         
         // Dynamic height row
         self.tableView.rowHeight = UITableViewAutomaticDimension
@@ -139,5 +143,26 @@ class EventsTableViewController: UITableViewController, UIViewControllerPreviewi
     
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
         self.navigationController?.pushViewController(viewControllerToCommit, animated: true)
+    }
+    
+    // MARK: UISearchBarDelegate
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText != "" {
+            Event.searchEvents(terms: searchText, completeCall: { (returnEntity) in
+                if let returnEntity = returnEntity {
+                    self.localArray = returnEntity
+                    self.tableView.reloadData()
+                }
+            }) { (errorMessage) in
+                print(errorMessage)
+            }
+        }
+        else {
+            self.updateLocalData()
+        }
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
     }
 }
