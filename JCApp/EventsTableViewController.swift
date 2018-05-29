@@ -72,7 +72,7 @@ class EventsTableViewController: UITableViewController, UISearchBarDelegate, UIV
         cell.nameLabel.text = item.name
         cell.roomLabel.text = item.room
         cell.speakerLabel.text = item.speaker
-        //cell.timeLabel.text = item.time
+        cell.timeLabel.text = item.schedule
         
         return cell
     }
