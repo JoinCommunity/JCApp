@@ -8,6 +8,7 @@
 
 import UIKit
 import JCApiClient
+import PopupDialog
 
 class EventDetailsTableViewController: UITableViewController {
 
@@ -67,9 +68,28 @@ class EventDetailsTableViewController: UITableViewController {
         }
     }
     
+    func popUpRating() {
+        let view = RatingViewController(nibName: "RatingViewController", bundle: nil)
+        
+        let popup = PopupDialog(viewController: view, buttonAlignment: .vertical, transitionStyle: .bounceUp, preferredWidth: 340, gestureDismissal: true, hideStatusBar: false, completion: nil)
+        
+        // Create buttons
+        let cancelButton = CancelButton(title: "Cancelar") {
+        }
+        
+        let ratingButton = DefaultButton(title: "Avaliar", height: 60) {
+            // TODO: Rate
+        }
+        
+        popup.addButtons([cancelButton, ratingButton])
+        
+        
+        self.present(popup, animated: true, completion: nil)
+    }
+    
     // MARK: @OBJC Methods
     @objc func addTapped() {
-        
+        self.popUpRating()
     }
     
 }
