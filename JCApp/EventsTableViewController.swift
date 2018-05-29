@@ -80,7 +80,7 @@ class EventsTableViewController: UITableViewController, UISearchBarDelegate, UIV
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = self.localArray[indexPath.row] as Event
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let viewController = storyboard.instantiateViewController(withIdentifier: "DetailsViewController") as? EventDetailsViewController else {
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: "EventDetailsViewController") as? EventDetailsViewController else {
             return
         }
         viewController.item = item
@@ -133,7 +133,7 @@ class EventsTableViewController: UITableViewController, UISearchBarDelegate, UIV
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        guard let viewController = storyboard.instantiateViewController(withIdentifier: "DetailsViewController") as? EventDetailsViewController else {
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: "SpeakerDetailsViewController") as? SpeakerDetailsViewController else {
             return nil
         }
         
