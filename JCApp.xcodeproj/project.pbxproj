@@ -20,6 +20,7 @@
 		3986278420B4528200063201 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3986278320B4528200063201 /* EventDetailsViewController.swift */; };
 		3986278720B45A2300063201 /* EventCustomCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3986278520B45A2300063201 /* EventCustomCellTableViewCell.swift */; };
 		3986278820B45A2300063201 /* EventCustomCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3986278620B45A2300063201 /* EventCustomCellTableViewCell.xib */; };
+		39F5358A20BD12FD002A0F12 /* SpeakerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F5358920BD12FD002A0F12 /* SpeakerDetailsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		3986278320B4528200063201 /* EventDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
 		3986278520B45A2300063201 /* EventCustomCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCustomCellTableViewCell.swift; sourceTree = "<group>"; };
 		3986278620B45A2300063201 /* EventCustomCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventCustomCellTableViewCell.xib; sourceTree = "<group>"; };
+		39F5358920BD12FD002A0F12 /* SpeakerDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerDetailsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 				3918444D20B4422A0009256D /* Main.storyboard */,
 				3986277E20B44BFD00063201 /* EventsTableViewController.swift */,
 				3986278320B4528200063201 /* EventDetailsViewController.swift */,
+				39F5358920BD12FD002A0F12 /* SpeakerDetailsViewController.swift */,
 				3986278920B45A2800063201 /* CustomViews */,
 				3986278220B451E400063201 /* Extensions */,
 				3918448720B443300009256D /* Supporting Files */,
@@ -324,6 +327,7 @@
 				3986278720B45A2300063201 /* EventCustomCellTableViewCell.swift in Sources */,
 				3986278420B4528200063201 /* EventDetailsViewController.swift in Sources */,
 				3986277F20B44BFD00063201 /* EventsTableViewController.swift in Sources */,
+				39F5358A20BD12FD002A0F12 /* SpeakerDetailsViewController.swift in Sources */,
 				3918444A20B4422A0009256D /* AppDelegate.swift in Sources */,
 				3986278120B451E000063201 /* ColorExtension.swift in Sources */,
 			);
