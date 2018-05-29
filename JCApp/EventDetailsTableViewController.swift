@@ -7,17 +7,19 @@
 //
 
 import UIKit
+import JCApiClient
 
 class EventDetailsTableViewController: UITableViewController {
 
+    var item: Event?
+    var localComments: [Comment] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(addTapped))
+        
+        self.updateData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,24 +30,22 @@ class EventDetailsTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.localComments.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        let item = self.localComments[indexPath.row]
+        
+        cell.textLabel?.text = item.author
+        cell.detailTextLabel?.text = item.comment
+        
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
@@ -92,4 +92,21 @@ class EventDetailsTableViewController: UITableViewController {
     }
     */
 
+    // MARK: Local Methods
+    func updateData() {
+        Comment.getCommentsFromEvent(event: self.item, completeCall: { (returnData) in
+            if let returnData = returnData {
+                self.localComments = returnData
+                self.tableView.reloadData()
+            }
+        }) { (errorMessage) in
+            print(errorMessage)
+        }
+    }
+    
+    // MARK: @OBJC Methods
+    @objc func addTapped() {
+        
+    }
+    
 }
