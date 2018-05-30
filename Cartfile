@@ -1,2 +1,3 @@
 github "Orderella/PopupDialog" ~> 0.7
 github "evgenyneu/Cosmos" ~> 15.0
+github "joselinoneto/JCApiClient" ~> 0.0.1
