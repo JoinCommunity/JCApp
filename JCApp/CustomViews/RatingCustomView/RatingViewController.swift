@@ -11,8 +11,11 @@ import Cosmos
 
 class RatingViewController: UIViewController {
 
+    @IBOutlet weak var authorTextField: UITextField!
     @IBOutlet weak var commentTextField: UITextField!
     @IBOutlet weak var ratingStarts: CosmosView!
+    
+    var delegate : RatingProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +35,13 @@ class RatingViewController: UIViewController {
         
         // Set the border color of a filled star
         self.ratingStarts.settings.filledBorderColor = UIColor.starYellow
+        
+        self.ratingStarts.didFinishTouchingCosmos = { rating in
+            let ratingInt = Int(rating)
+            let comment = self.commentTextField.text
+            let author = self.authorTextField.text
+            self.delegate?.rateEvent(numberStars: ratingInt, comment: comment, author: author)
+        }
     }
 
     override func didReceiveMemoryWarning() {
