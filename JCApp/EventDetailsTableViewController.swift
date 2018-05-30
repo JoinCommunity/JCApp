@@ -83,7 +83,9 @@ class EventDetailsTableViewController: UITableViewController, RatingProtocol {
         }
         
         let ratingButton = DefaultButton(title: "Avaliar", height: 60) {
-            // TODO: Rate
+            if self.ratingAuthor == "" {
+                self.ratingAuthor = "Alguém Tímido"
+            }
             
             var comment = Comment()
             //comment.author = self.
@@ -91,6 +93,11 @@ class EventDetailsTableViewController: UITableViewController, RatingProtocol {
             comment.rate = self.ratingValue
             comment.comment = self.ratingComment
             comment.author = self.ratingAuthor
+            
+            guard self.ratingValue > 0 else {
+                self.alertMessage(title: "Erro", message: "Informe uma nota, utilize as estrelas", dismiss: false)
+                return
+            }
             
             comment.createComment(completeCall: { (returnComment) in
                 if returnComment != nil {

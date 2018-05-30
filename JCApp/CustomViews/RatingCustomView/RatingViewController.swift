@@ -9,7 +9,7 @@
 import UIKit
 import Cosmos
 
-class RatingViewController: UIViewController {
+class RatingViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var authorTextField: UITextField!
     @IBOutlet weak var commentTextField: UITextField!
@@ -19,6 +19,10 @@ class RatingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // TextField delegate
+        self.authorTextField.delegate = self
+        self.commentTextField.delegate = self
+        
         self.ratingStarts.rating = 0
         self.ratingStarts.settings.fillMode = .full
         // Change the size of the stars
@@ -49,15 +53,10 @@ class RatingViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        let ratingInt = Int(self.ratingStarts.rating)
+        let comment = self.commentTextField.text
+        let author = self.authorTextField.text
+        self.delegate?.rateEvent(numberStars: ratingInt, comment: comment, author: author)
     }
-    */
-
 }
