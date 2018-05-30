@@ -13,8 +13,6 @@
 		3918445720B4422C0009256D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3918445520B4422C0009256D /* LaunchScreen.storyboard */; };
 		3918446220B4422C0009256D /* JCAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3918446120B4422C0009256D /* JCAppTests.swift */; };
 		3918446D20B4422C0009256D /* JCAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3918446C20B4422C0009256D /* JCAppUITests.swift */; };
-		3918449220B4469A0009256D /* JCApiClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3918449120B4469A0009256D /* JCApiClient.framework */; };
-		3918449420B4469F0009256D /* JCApiClient.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3918449120B4469A0009256D /* JCApiClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3986277F20B44BFD00063201 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3986277E20B44BFD00063201 /* EventsTableViewController.swift */; };
 		3986278120B451E000063201 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3986278020B451E000063201 /* ColorExtension.swift */; };
 		3986278720B45A2300063201 /* EventCustomCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3986278520B45A2300063201 /* EventCustomCellTableViewCell.swift */; };
@@ -46,20 +44,6 @@
 		};
 /* End PBXContainerItemProxy section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		3918448F20B446830009256D /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				3918449420B4469F0009256D /* JCApiClient.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
 		3918444620B4422A0009256D /* JCApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JCApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3918444920B4422A0009256D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -73,7 +57,6 @@
 		3918446820B4422C0009256D /* JCAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JCAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3918446C20B4422C0009256D /* JCAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JCAppUITests.swift; sourceTree = "<group>"; };
 		3918446E20B4422C0009256D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3918449120B4469A0009256D /* JCApiClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = JCApiClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3986277E20B44BFD00063201 /* EventsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
 		3986278020B451E000063201 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		3986278520B45A2300063201 /* EventCustomCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCustomCellTableViewCell.swift; sourceTree = "<group>"; };
@@ -95,7 +78,6 @@
 			files = (
 				39F5359C20BD94B5002A0F12 /* Cosmos.framework in Frameworks */,
 				39F5359D20BD94B5002A0F12 /* PopupDialog.framework in Frameworks */,
-				3918449220B4469A0009256D /* JCApiClient.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,13 +123,11 @@
 			isa = PBXGroup;
 			children = (
 				3918444D20B4422A0009256D /* Main.storyboard */,
-				3986277E20B44BFD00063201 /* EventsTableViewController.swift */,
-				39F5358D20BD73F3002A0F12 /* EventDetailsTableViewController.swift */,
-				39F5358920BD12FD002A0F12 /* SpeakerDetailsViewController.swift */,
+				39446C2020BE977A00EE1106 /* ViewControllers */,
 				3986278920B45A2800063201 /* CustomViews */,
+				39446C1F20BE976900EE1106 /* Protocols */,
 				3986278220B451E400063201 /* Extensions */,
 				3918448720B443300009256D /* Supporting Files */,
-				39F535A120BDB383002A0F12 /* RatingProtocol.swift */,
 			);
 			path = JCApp;
 			sourceTree = "<group>";
@@ -175,7 +155,6 @@
 			children = (
 				39F5359A20BD94B4002A0F12 /* Cosmos.framework */,
 				39F5359B20BD94B4002A0F12 /* PopupDialog.framework */,
-				3918449120B4469A0009256D /* JCApiClient.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -189,6 +168,24 @@
 				3918445820B4422C0009256D /* Info.plist */,
 			);
 			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		39446C1F20BE976900EE1106 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				39F535A120BDB383002A0F12 /* RatingProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		39446C2020BE977A00EE1106 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3986277E20B44BFD00063201 /* EventsTableViewController.swift */,
+				39F5358D20BD73F3002A0F12 /* EventDetailsTableViewController.swift */,
+				39F5358920BD12FD002A0F12 /* SpeakerDetailsViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 		3986278220B451E400063201 /* Extensions */ = {
@@ -237,7 +234,6 @@
 				3918444220B4422A0009256D /* Sources */,
 				3918444320B4422A0009256D /* Frameworks */,
 				3918444420B4422A0009256D /* Resources */,
-				3918448F20B446830009256D /* Embed Frameworks */,
 				39F5358F20BD927B002A0F12 /* ShellScript */,
 			);
 			buildRules = (
@@ -367,6 +363,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/PopupDialog.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Cosmos.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/DynamicBlurView.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/JCApiClient.framework",
 			);
 			outputPaths = (
 			);
@@ -562,7 +559,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 6CEJZ72DDU;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -575,10 +573,13 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.construtor.JCApp;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.construtor.joincommunity;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "583a92d7-03f7-4549-83c4-3f7839b891f8";
+				PROVISIONING_PROFILE_SPECIFIER = ppJoinDev;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
 		};
@@ -586,7 +587,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 6CEJZ72DDU;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -599,10 +602,13 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = br.com.construtor.JCApp;
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.construtor.joincommunity;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "39a1a213-21a2-49b9-8cff-0279f7af60dd";
+				PROVISIONING_PROFILE_SPECIFIER = ppJoinProd1;
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = 1;
+				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
 		};
