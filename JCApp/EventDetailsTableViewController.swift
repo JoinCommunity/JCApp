@@ -10,10 +10,13 @@ import UIKit
 import JCApiClient
 import PopupDialog
 
-class EventDetailsTableViewController: UITableViewController {
-
+class EventDetailsTableViewController: UITableViewController, RatingProtocol {
+    
     var item: Event?
     var localComments: [Comment] = []
+    var ratingValue : Int = 0
+    var ratingComment : String?
+    var ratingAuthor : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +45,7 @@ class EventDetailsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         let item = self.localComments[indexPath.row]
         
-        cell.textLabel?.text = item.author
+        cell.textLabel?.text = "\(item.author ?? "O Timido") - Nota: \(item.rate ?? 1)"
         cell.detailTextLabel?.text = item.comment
         
         return cell
@@ -65,11 +68,13 @@ class EventDetailsTableViewController: UITableViewController {
         }) { (errorMessage) in
             print(errorMessage)
             self.tableView.refreshControl?.endRefreshing()
+            self.alertMessage(title: "Erro", message: errorMessage, dismiss: false)
         }
     }
     
     func popUpRating() {
         let view = RatingViewController(nibName: "RatingViewController", bundle: nil)
+        view.delegate = self
         
         let popup = PopupDialog(viewController: view, buttonAlignment: .vertical, transitionStyle: .bounceUp, preferredWidth: 340, gestureDismissal: true, hideStatusBar: false, completion: nil)
         
@@ -79,6 +84,21 @@ class EventDetailsTableViewController: UITableViewController {
         
         let ratingButton = DefaultButton(title: "Avaliar", height: 60) {
             // TODO: Rate
+            
+            var comment = Comment()
+            //comment.author = self.
+            comment.eventId = self.item?.eventId
+            comment.rate = self.ratingValue
+            comment.comment = self.ratingComment
+            comment.author = self.ratingAuthor
+            
+            comment.createComment(completeCall: { (returnComment) in
+                if returnComment != nil {
+                    self.updateData()
+                }
+            }, errorCall: { (errorMessage) in
+                self.alertMessage(title: "Erro", message: errorMessage, dismiss: false)
+            })
         }
         
         popup.addButtons([cancelButton, ratingButton])
@@ -92,4 +112,11 @@ class EventDetailsTableViewController: UITableViewController {
         self.popUpRating()
     }
     
+    // MARK: RateProtocol
+    
+    func rateEvent(numberStars: Int, comment: String?, author: String? ) {
+        self.ratingValue = numberStars
+        self.ratingComment = comment
+        self.ratingAuthor = author
+    }
 }

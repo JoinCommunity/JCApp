@@ -7,3 +7,6 @@
 //
 
 import Foundation
+protocol RatingProtocol {
+    func rateEvent(numberStars: Int, comment: String?, author: String?)
+}
