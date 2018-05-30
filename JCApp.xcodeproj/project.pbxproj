@@ -25,6 +25,8 @@
 		39F5359420BD934C002A0F12 /* RatingViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 39F5359220BD934C002A0F12 /* RatingViewController.xib */; };
 		39F5359C20BD94B5002A0F12 /* Cosmos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F5359A20BD94B4002A0F12 /* Cosmos.framework */; };
 		39F5359D20BD94B5002A0F12 /* PopupDialog.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 39F5359B20BD94B4002A0F12 /* PopupDialog.framework */; };
+		39F535A220BDB383002A0F12 /* RatingProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F535A120BDB383002A0F12 /* RatingProtocol.swift */; };
+		39F535A420BDB825002A0F12 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F535A320BDB825002A0F12 /* UIViewControllerExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +84,8 @@
 		39F5359220BD934C002A0F12 /* RatingViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RatingViewController.xib; sourceTree = "<group>"; };
 		39F5359A20BD94B4002A0F12 /* Cosmos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cosmos.framework; path = Carthage/Build/iOS/Cosmos.framework; sourceTree = "<group>"; };
 		39F5359B20BD94B4002A0F12 /* PopupDialog.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PopupDialog.framework; path = Carthage/Build/iOS/PopupDialog.framework; sourceTree = "<group>"; };
+		39F535A120BDB383002A0F12 /* RatingProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingProtocol.swift; sourceTree = "<group>"; };
+		39F535A320BDB825002A0F12 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,7 @@
 				3986278920B45A2800063201 /* CustomViews */,
 				3986278220B451E400063201 /* Extensions */,
 				3918448720B443300009256D /* Supporting Files */,
+				39F535A120BDB383002A0F12 /* RatingProtocol.swift */,
 			);
 			path = JCApp;
 			sourceTree = "<group>";
@@ -190,6 +195,7 @@
 			isa = PBXGroup;
 			children = (
 				3986278020B451E000063201 /* ColorExtension.swift */,
+				39F535A320BDB825002A0F12 /* UIViewControllerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -377,10 +383,12 @@
 			files = (
 				3986278720B45A2300063201 /* EventCustomCellTableViewCell.swift in Sources */,
 				3986277F20B44BFD00063201 /* EventsTableViewController.swift in Sources */,
+				39F535A420BDB825002A0F12 /* UIViewControllerExtension.swift in Sources */,
 				39F5358A20BD12FD002A0F12 /* SpeakerDetailsViewController.swift in Sources */,
 				3918444A20B4422A0009256D /* AppDelegate.swift in Sources */,
 				3986278120B451E000063201 /* ColorExtension.swift in Sources */,
 				39F5358E20BD73F3002A0F12 /* EventDetailsTableViewController.swift in Sources */,
+				39F535A220BDB383002A0F12 /* RatingProtocol.swift in Sources */,
 				39F5359320BD934C002A0F12 /* RatingViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
