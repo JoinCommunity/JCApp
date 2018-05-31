@@ -26,7 +26,7 @@ class RatingViewController: UIViewController, UITextFieldDelegate {
         self.ratingStarts.rating = 0
         self.ratingStarts.settings.fillMode = .full
         // Change the size of the stars
-        self.ratingStarts.settings.starSize = 40
+        self.ratingStarts.settings.starSize = 35
         self.ratingStarts.settings.starMargin = Double(self.view.frame.width / 15)
 
         self.ratingStarts.backgroundColor = UIColor.clear
