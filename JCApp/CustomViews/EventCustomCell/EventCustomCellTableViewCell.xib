@@ -42,14 +42,14 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="time" translatesAutoresizingMaskIntoConstraints="NO" id="GTy-ah-F10">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock-outline1" translatesAutoresizingMaskIntoConstraints="NO" id="GTy-ah-F10">
                         <rect key="frame" x="16" y="98" width="25" height="25"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="25" id="ASU-jf-heD"/>
                             <constraint firstAttribute="height" constant="25" id="m4a-Yd-kOA"/>
                         </constraints>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hotel" translatesAutoresizingMaskIntoConstraints="NO" id="ccd-fy-DEn">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="office-building" translatesAutoresizingMaskIntoConstraints="NO" id="ccd-fy-DEn">
                         <rect key="frame" x="279" y="98" width="25" height="25"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="25" id="PIM-1D-pfF"/>
@@ -105,7 +105,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="hotel" width="512" height="512"/>
-        <image name="time" width="512" height="512"/>
+        <image name="clock-outline1" width="48" height="48"/>
+        <image name="office-building" width="512" height="512"/>
     </resources>
 </document>

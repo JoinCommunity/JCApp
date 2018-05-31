@@ -24,7 +24,7 @@ class EventsTableViewController: UITableViewController, UISearchBarDelegate, UIV
         // Color
         if #available(iOS 11.0, *) {
             // Large titles
-            //self.navigationController?.navigationBar.prefersLargeTitles = true
+            self.navigationController?.navigationBar.prefersLargeTitles = true
             self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         } else {
             // Fallback on earlier versions
