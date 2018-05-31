@@ -22,6 +22,7 @@ class EventDetailsTableViewController: UITableViewController, RatingProtocol {
         super.viewDidLoad()
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(addTapped))
+
         
         self.updateData()
     }
@@ -43,6 +44,7 @@ class EventDetailsTableViewController: UITableViewController, RatingProtocol {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        cell.selectionStyle = .none
         let item = self.localComments[indexPath.row]
         
         cell.textLabel?.text = "\(item.author ?? "O Timido") - Nota: \(item.rate ?? 1)"
