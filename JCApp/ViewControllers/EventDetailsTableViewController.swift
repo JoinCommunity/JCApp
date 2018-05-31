@@ -23,6 +23,11 @@ class EventDetailsTableViewController: UITableViewController, RatingProtocol {
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .compose, target: self, action: #selector(addTapped))
 
+        if #available(iOS 11.0, *) {
+            self.navigationController?.navigationItem.largeTitleDisplayMode = .never
+        } else {
+            // Fallback on earlier versions
+        }
         
         self.updateData()
     }
