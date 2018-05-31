@@ -17,6 +17,8 @@
 		3986278120B451E000063201 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3986278020B451E000063201 /* ColorExtension.swift */; };
 		3986278720B45A2300063201 /* EventCustomCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3986278520B45A2300063201 /* EventCustomCellTableViewCell.swift */; };
 		3986278820B45A2300063201 /* EventCustomCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3986278620B45A2300063201 /* EventCustomCellTableViewCell.xib */; };
+		3988B35A20BF70D100A673D7 /* Open Sans Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3988B35820BF6F0F00A673D7 /* Open Sans Bold.ttf */; };
+		3988B35B20BF70D500A673D7 /* Open Sans Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3988B35720BF6F0E00A673D7 /* Open Sans Regular.ttf */; };
 		39F5358A20BD12FD002A0F12 /* SpeakerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F5358920BD12FD002A0F12 /* SpeakerDetailsViewController.swift */; };
 		39F5358E20BD73F3002A0F12 /* EventDetailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F5358D20BD73F3002A0F12 /* EventDetailsTableViewController.swift */; };
 		39F5359320BD934C002A0F12 /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39F5359120BD934C002A0F12 /* RatingViewController.swift */; };
@@ -61,6 +63,8 @@
 		3986278020B451E000063201 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		3986278520B45A2300063201 /* EventCustomCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCustomCellTableViewCell.swift; sourceTree = "<group>"; };
 		3986278620B45A2300063201 /* EventCustomCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventCustomCellTableViewCell.xib; sourceTree = "<group>"; };
+		3988B35720BF6F0E00A673D7 /* Open Sans Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Open Sans Regular.ttf"; sourceTree = "<group>"; };
+		3988B35820BF6F0F00A673D7 /* Open Sans Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Open Sans Bold.ttf"; sourceTree = "<group>"; };
 		39F5358920BD12FD002A0F12 /* SpeakerDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerDetailsViewController.swift; sourceTree = "<group>"; };
 		39F5358D20BD73F3002A0F12 /* EventDetailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsTableViewController.swift; sourceTree = "<group>"; };
 		39F5359120BD934C002A0F12 /* RatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
@@ -162,6 +166,7 @@
 		3918448720B443300009256D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3988B35920BF6F1400A673D7 /* CustomFonts */,
 				3918444920B4422A0009256D /* AppDelegate.swift */,
 				3918445320B4422C0009256D /* Assets.xcassets */,
 				3918445520B4422C0009256D /* LaunchScreen.storyboard */,
@@ -204,6 +209,15 @@
 				39F5359520BD9350002A0F12 /* RatingCustomView */,
 			);
 			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		3988B35920BF6F1400A673D7 /* CustomFonts */ = {
+			isa = PBXGroup;
+			children = (
+				3988B35820BF6F0F00A673D7 /* Open Sans Bold.ttf */,
+				3988B35720BF6F0E00A673D7 /* Open Sans Regular.ttf */,
+			);
+			path = CustomFonts;
 			sourceTree = "<group>";
 		};
 		39F5359020BD9302002A0F12 /* EventCustomCell */ = {
@@ -333,6 +347,8 @@
 				3918445420B4422C0009256D /* Assets.xcassets in Resources */,
 				3986278820B45A2300063201 /* EventCustomCellTableViewCell.xib in Resources */,
 				3918444F20B4422A0009256D /* Main.storyboard in Resources */,
+				3988B35B20BF70D500A673D7 /* Open Sans Regular.ttf in Resources */,
+				3988B35A20BF70D100A673D7 /* Open Sans Bold.ttf in Resources */,
 				39F5359420BD934C002A0F12 /* RatingViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

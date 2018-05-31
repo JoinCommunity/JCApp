@@ -49,6 +49,22 @@ class EventsTableViewController: UITableViewController, UISearchBarDelegate, UIV
         
         // Get remote data
         self.updateLocalData()
+        
+        // Custom ui search bar
+        self.localSearchBar.backgroundColor = UIColor.white
+        self.localSearchBar.setBackgroundImage(UIImage(), for: .any, barMetrics: .default)
+        for view in self.localSearchBar.subviews.first!.subviews {
+            view.backgroundColor = UIColor.clear
+            if view.isKind(of: UITextField.self) {
+                let textField = view as! UITextField
+                textField.layer.borderWidth = 2.0
+                textField.layer.borderColor = UIColor.backGroundColor.cgColor
+                textField.layer.cornerRadius = 18.0
+                textField.font = UIFont(name: "Open Sans Regular", size: 17.0)
+                //textField.textColor = UIColor.fixarTitleBlueColor
+                textField.backgroundColor = UIColor.clear
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -69,7 +85,7 @@ class EventsTableViewController: UITableViewController, UISearchBarDelegate, UIV
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! EventCustomCellTableViewCell
         
         let item = self.localArray[indexPath.row]
-        cell.nameLabel.text = item.name
+        cell.nameLabel.text = item.name?.capitalized
         cell.roomLabel.text = item.room
         cell.speakerLabel.text = item.speaker
         cell.timeLabel.text = item.schedule
