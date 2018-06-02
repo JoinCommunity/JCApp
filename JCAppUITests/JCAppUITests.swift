@@ -21,6 +21,10 @@ class JCAppUITests: XCTestCase {
         XCUIApplication().launch()
 
         // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+        let app = XCUIApplication()
+        setupSnapshot(app)
+        app.launch()
+
     }
     
     override func tearDown() {
@@ -31,6 +35,10 @@ class JCAppUITests: XCTestCase {
     func testExample() {
         // Use recording to get started writing UI tests.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let app = XCUIApplication()
+        sleep(10)
+        snapshot("00Home")        
     }
     
 }
