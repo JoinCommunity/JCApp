@@ -150,7 +150,7 @@ class EventsTableViewController: UITableViewController, UISearchBarDelegate, UIV
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        guard let viewController = storyboard.instantiateViewController(withIdentifier: "SpeakerDetailsViewController") as? SpeakerDetailsViewController else {
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: "EventDetailsTableViewController") as? EventDetailsTableViewController else {
             return nil
         }
         

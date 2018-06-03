@@ -29,6 +29,13 @@ class EventDetailsTableViewController: UITableViewController, RatingProtocol {
             // Fallback on earlier versions
         }
         
+        //self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+        self.tableView.register(UINib(nibName: "SpeakerCustomCellTableViewCell", bundle: nil), forCellReuseIdentifier: "SpeakerCustomCellTableViewCell")
+        
+        // Dynamic height row
+        self.tableView.rowHeight = UITableViewAutomaticDimension
+        self.tableView.estimatedRowHeight = 685.0
+        
         self.updateData()
     }
 
@@ -40,24 +47,46 @@ class EventDetailsTableViewController: UITableViewController, RatingProtocol {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return 2
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.localComments.count
+        if section == 0 {
+            return 1
+        }
+        else {
+            return self.localComments.count
+        }
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.selectionStyle = .none
-        let item = self.localComments[indexPath.row]
-        
-        cell.textLabel?.text = "\(item.author ?? "O Timido") - Nota: \(item.rate ?? 1)"
-        cell.detailTextLabel?.text = item.comment
-        
-        return cell
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "SpeakerCustomCellTableViewCell", for: indexPath) as! SpeakerCustomCellTableViewCell
+
+            cell.event = self.item
+
+            return cell
+        }
+        else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+            cell.selectionStyle = .none
+            let item = self.localComments[indexPath.row] // -1 row speaker
+
+            cell.textLabel?.text = "\(item.author ?? "O Timido") - Nota: \(item.rate ?? 1)"
+            cell.detailTextLabel?.text = item.comment
+
+            return cell
+        }
     }
 
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if indexPath.section == 0 {
+            return 750.0
+        } else {
+            return UITableViewAutomaticDimension
+        }
+    }
+    
     // MARK: IBActions
     @IBAction func updateCommentsAction(_ sender: Any) {
         self.updateData()

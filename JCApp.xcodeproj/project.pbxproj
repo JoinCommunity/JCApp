@@ -13,6 +13,8 @@
 		3918445720B4422C0009256D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3918445520B4422C0009256D /* LaunchScreen.storyboard */; };
 		3918446220B4422C0009256D /* JCAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3918446120B4422C0009256D /* JCAppTests.swift */; };
 		3918446D20B4422C0009256D /* JCAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3918446C20B4422C0009256D /* JCAppUITests.swift */; };
+		3919E9F120C4003600849B48 /* SpeakerCustomCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3919E9EF20C4003600849B48 /* SpeakerCustomCellTableViewCell.swift */; };
+		3919E9F220C4003600849B48 /* SpeakerCustomCellTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3919E9F020C4003600849B48 /* SpeakerCustomCellTableViewCell.xib */; };
 		3986277F20B44BFD00063201 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3986277E20B44BFD00063201 /* EventsTableViewController.swift */; };
 		3986278120B451E000063201 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3986278020B451E000063201 /* ColorExtension.swift */; };
 		3986278720B45A2300063201 /* EventCustomCellTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3986278520B45A2300063201 /* EventCustomCellTableViewCell.swift */; };
@@ -60,6 +62,8 @@
 		3918446820B4422C0009256D /* JCAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JCAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3918446C20B4422C0009256D /* JCAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JCAppUITests.swift; sourceTree = "<group>"; };
 		3918446E20B4422C0009256D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3919E9EF20C4003600849B48 /* SpeakerCustomCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakerCustomCellTableViewCell.swift; sourceTree = "<group>"; };
+		3919E9F020C4003600849B48 /* SpeakerCustomCellTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SpeakerCustomCellTableViewCell.xib; sourceTree = "<group>"; };
 		3986277E20B44BFD00063201 /* EventsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
 		3986278020B451E000063201 /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
 		3986278520B45A2300063201 /* EventCustomCellTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventCustomCellTableViewCell.swift; sourceTree = "<group>"; };
@@ -178,6 +182,15 @@
 			path = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		3919E9F320C4004F00849B48 /* SpeakerCustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				3919E9EF20C4003600849B48 /* SpeakerCustomCellTableViewCell.swift */,
+				3919E9F020C4003600849B48 /* SpeakerCustomCellTableViewCell.xib */,
+			);
+			path = SpeakerCustomCell;
+			sourceTree = "<group>";
+		};
 		39446C1F20BE976900EE1106 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				39F5359020BD9302002A0F12 /* EventCustomCell */,
+				3919E9F320C4004F00849B48 /* SpeakerCustomCell */,
 				39F5359520BD9350002A0F12 /* RatingCustomView */,
 			);
 			path = CustomViews;
@@ -350,6 +364,7 @@
 				3918445420B4422C0009256D /* Assets.xcassets in Resources */,
 				3986278820B45A2300063201 /* EventCustomCellTableViewCell.xib in Resources */,
 				3918444F20B4422A0009256D /* Main.storyboard in Resources */,
+				3919E9F220C4003600849B48 /* SpeakerCustomCellTableViewCell.xib in Resources */,
 				3988B35B20BF70D500A673D7 /* Open Sans Regular.ttf in Resources */,
 				3988B35A20BF70D100A673D7 /* Open Sans Bold.ttf in Resources */,
 				39F5359420BD934C002A0F12 /* RatingViewController.xib in Resources */,
@@ -401,6 +416,7 @@
 				3986277F20B44BFD00063201 /* EventsTableViewController.swift in Sources */,
 				39F535A420BDB825002A0F12 /* UIViewControllerExtension.swift in Sources */,
 				39F5358A20BD12FD002A0F12 /* SpeakerDetailsViewController.swift in Sources */,
+				3919E9F120C4003600849B48 /* SpeakerCustomCellTableViewCell.swift in Sources */,
 				3918444A20B4422A0009256D /* AppDelegate.swift in Sources */,
 				3986278120B451E000063201 /* ColorExtension.swift in Sources */,
 				39F5358E20BD73F3002A0F12 /* EventDetailsTableViewController.swift in Sources */,

@@ -7,9 +7,28 @@
 //
 
 import UIKit
+import JCApiClient
 
 class SpeakerCustomCellTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var speakerPhoto: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UITextView!
+    
+    private var localEvent: Event?
+    var event: Event? {
+        get {
+            return localEvent
+        }
+        set {
+            localEvent = newValue
+            
+            self.nameLabel.text = localEvent?.name
+            self.descriptionLabel.text = localEvent?.subject
+            self.speakerPhoto.image = localEvent?.image
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
