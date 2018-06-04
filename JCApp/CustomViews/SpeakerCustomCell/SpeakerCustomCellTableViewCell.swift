@@ -13,7 +13,7 @@ class SpeakerCustomCellTableViewCell: UITableViewCell {
 
     @IBOutlet weak var speakerPhoto: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var descriptionLabel: UITextView!
+    @IBOutlet weak var descriptionLabel: UILabel!
     
     private var localEvent: Event?
     var event: Event? {

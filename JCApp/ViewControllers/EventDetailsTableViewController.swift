@@ -18,6 +18,8 @@ class EventDetailsTableViewController: UITableViewController, RatingProtocol {
     var ratingComment : String?
     var ratingAuthor : String?
     
+    let TABLE_HEIGHT : CGFloat = 600.0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -34,8 +36,7 @@ class EventDetailsTableViewController: UITableViewController, RatingProtocol {
         
         // Dynamic height row
         self.tableView.rowHeight = UITableViewAutomaticDimension
-        self.tableView.estimatedRowHeight = 685.0
-        
+        self.tableView.estimatedRowHeight = self.TABLE_HEIGHT
         self.updateData()
     }
 
@@ -81,7 +82,12 @@ class EventDetailsTableViewController: UITableViewController, RatingProtocol {
 
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.section == 0 {
-            return 750.0
+            if let cell = self.tableView.cellForRow(at: indexPath) {
+                return cell.frame.height
+            }
+            else {
+                return TABLE_HEIGHT
+            }
         } else {
             return UITableViewAutomaticDimension
         }
