@@ -30,7 +30,7 @@ carthage update --platform iOS
 
 ```
 
-  The backend project was created by [Pedro Paulo](https://github.com/pedrogyn) and must used with this one. Please follow this link and instrucions to build locally your own backend. [Join Community API](https://github.com/pedrogyn/joincommunity_api)
+  The backend project was created and must used with this one. Please follow this link and instrucions to build locally your own backend. [Join Community API](https://github.com/pedrogyn/joincommunity_api)
 
 After that you must change the value of Build Setting user defined key JOINCOMMUNITY_URL_API to your local IP or remote server. 
 
