@@ -30,11 +30,11 @@ carthage update --platform iOS
 
 ```
 
-  The backend project was created and must used with this one. Please follow this link and instrucions to build locally your own backend. [Join Community API](https://github.com/pedrogyn/joincommunity_api)
+  The backend project was created by [Pedro Paulo](https://github.com/pedrogyn) and must used with this one. Please follow this link and instrucions to build locally your own backend. [Join Community API](https://github.com/pedrogyn/joincommunity_api)
 
 After that you must change the value of Build Setting user defined key JOINCOMMUNITY_URL_API to your local IP or remote server. 
 
-
+This project use a API Cient to read and write on this API Backend server. This client it's a Cocoa Touch Framework. Make async calls, download image assets and save offline data. For more information please read more at: [Join Community API Client](https://github.com/joselinoneto/JCApiClient)
 
 ### NOTE: For publish must remove Allow Arbitrary Loads from Info.plist
 
